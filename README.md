@@ -14,6 +14,8 @@
 > 如果webpack-dev-server是3.X，webpack必须是4.X；如果webpack-dev-server是2.X，webpack必须是3.X
 > 发生这个错误的原因是，在初始化安装npm包的时候，提示`found 1 high severity vulnerability run npm audit fix to fix them, or npm audit for details` ，发现了一个高危漏洞，然后按照npm的提示执行之后，webpack-dev-server版本就变成3.x，然后就抛出了这个error
 >
+> bug5 `[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "showDialog"` 使用elementui时，把弹窗放在子组件中，弹窗的状态由父组件传递进来，关闭时报这个警告。
+> 原因是由于props属性接收到的参数是不能修改的，elementui在关闭弹窗时时获取控制弹窗的变量然后修改，就导致了这个问题。（弹窗的状态选择用vuex管理）
 
 ### ISSUE 列表
 
