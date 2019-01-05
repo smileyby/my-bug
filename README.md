@@ -21,4 +21,6 @@
 
 > issue1 `elementui 滚动条组件` [具体用法查看git issue](https://github.com/ElemeFE/element/issues/2238)
 >
-> issue3 elementUI 在el-row 或者 el-col 上使用@click失效 需要使用`.native`修饰符 `@click.native="events"`
+> issue2 elementUI 在el-row 或者 el-col 上使用@click失效 需要使用`.native`修饰符 `@click.native="events"`
+>
+> issue3 elementui dialog对话框 before-close 仅当用户通过点击关闭图标或遮罩关闭 Dialog 时起效
