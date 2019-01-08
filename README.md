@@ -24,3 +24,7 @@
 > issue2 elementUI 在el-row 或者 el-col 上使用@click失效 需要使用`.native`修饰符 `@click.native="events"`
 >
 > issue3 elementui dialog对话框 before-close 仅当用户通过点击关闭图标或遮罩关闭 Dialog 时起效
+>
+> issue4 elementui `v-model.number` 绑定值才是number类型，不写默认是字符串类型
+>
+>issue4 elementui checkbox多选框绑定指定value值，并显示执行描述`<el-checkbox :label="subject.id" name="type" :key="subject.id" v-for="subject in config.subjectList">{{subject.subjectName}}</el-checkbox>`
