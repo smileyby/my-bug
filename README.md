@@ -27,4 +27,6 @@
 >
 > issue4 elementui `v-model.number` 绑定值才是number类型，不写默认是字符串类型
 >
->issue4 elementui checkbox多选框绑定指定value值，并显示执行描述`<el-checkbox :label="subject.id" name="type" :key="subject.id" v-for="subject in config.subjectList">{{subject.subjectName}}</el-checkbox>`
+> issue4 elementui checkbox多选框绑定指定value值，并显示执行描述`<el-checkbox :label="subject.id" name="type" :key="subject.id" v-for="subject in config.subjectList">{{subject.subjectName}}</el-checkbox>`
+>
+> issue5 `Warn : [vue-router] Duplicate named routes definition:` vue运行报这个警告，是router中存在name命名重复，修改下名字就可以了
