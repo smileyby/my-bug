@@ -30,3 +30,5 @@
 > issue4 elementui checkbox多选框绑定指定value值，并显示执行描述`<el-checkbox :label="subject.id" name="type" :key="subject.id" v-for="subject in config.subjectList">{{subject.subjectName}}</el-checkbox>`
 >
 > issue5 `Warn : [vue-router] Duplicate named routes definition:` vue运行报这个警告，是router中存在name命名重复，修改下名字就可以了
+>
+> issue6 VUE 表单元素使用v-model绑定数据值，使用验证规则检测时，数据值不能嵌套多层，否则检测不到数据值得改变。例如`v-model="a.b.c"`修改`a.b.c`值得时候数据是非响应的
