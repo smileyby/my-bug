@@ -32,3 +32,6 @@
 > issue5 `Warn : [vue-router] Duplicate named routes definition:` vue运行报这个警告，是router中存在name命名重复，修改下名字就可以了
 >
 > issue6 VUE 表单元素使用v-model绑定数据值，使用验证规则检测时，数据值不能嵌套多层，否则检测不到数据值得改变。例如`v-model="a.b.c"`修改`a.b.c`值得时候数据是非响应的
+>
+> issue7 vue-cli报错 ` vue-cli · Failed to download repo vuejs-templates/webpack: getaddrinfo ENOTFOUND github.com github.com:443
+` 这个报错是由于，使用vpn时修改了vue-cli下载模版的端口，导致其试图从127.0.0.1:41379下载。关掉VPN正常使用
