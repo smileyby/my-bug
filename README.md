@@ -16,6 +16,8 @@
 >
 > bug5 `[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "showDialog"` 使用elementui时，把弹窗放在子组件中，弹窗的状态由父组件传递进来，关闭时报这个警告。
 > 原因是由于props属性接收到的参数是不能修改的，elementui在关闭弹窗时时获取控制弹窗的变量然后修改，就导致了这个问题。（弹窗的状态选择用vuex管理）
+> 
+> bug6 配置webpack中externals来减少打包后vendor.js的体积 一直报错 $router 不能重复定义
 
 ### ISSUE 列表
 
