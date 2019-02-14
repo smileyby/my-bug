@@ -37,3 +37,6 @@
 >
 > issue7 vue-cli报错 ` vue-cli · Failed to download repo vuejs-templates/webpack: getaddrinfo ENOTFOUND github.com github.com:443
 ` 这个报错是由于，使用vpn时修改了vue-cli下载模版的端口，导致其试图从127.0.0.1:41379下载。关掉VPN正常使用
+>
+> issue8 elementui 中表单方法 **`resetFields`** 对整个表单进行重置，将所有字段值重置为**初始值**并移除校验结果，**`clearValidate`**
+清空校验结果。这两个方法是有区别的
