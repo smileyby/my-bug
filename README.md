@@ -40,3 +40,25 @@
 >
 > issue8 elementui 中表单方法 **`resetFields`** 对整个表单进行重置，将所有字段值重置为**初始值**并移除校验结果，**`clearValidate`**
 清空校验结果。这两个方法是有区别的
+>
+> issue9 [elementui-cascader级联选择组件]：动态加载次级数据问题: **第一层级的数据中，cities即使没有也要存在且为空数组，这样才能触发`active-item-change`事件**，否则即使**当父级选项变化时触发的事件，仅在 change-on-select 为 false **也不能触发`active-item-change`
+```javascript
+  var Main = {
+    data() {
+      return {
+        options2: [{
+          label: '江苏',
+          cities: []
+        }, {
+          label: '浙江',
+          cities: []
+        }],
+        props: {
+          value: 'label',
+          children: 'cities'
+        }
+      };
+    }
+  };
+```
+
