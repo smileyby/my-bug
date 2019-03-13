@@ -61,4 +61,6 @@
     }
   };
 ```
+>
+> issue10 winscp 通过ftp连接远程服务器默认是被动模式，需要在高级->连接中把被动模式勾掉，不然就会一直报`Server sent passive reply with unroutable address 172.18.202.164, using host address instead.`这个错误
 
