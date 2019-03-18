@@ -64,5 +64,5 @@
 >
 > issue10 winscp 通过ftp连接远程服务器默认是被动模式，需要在高级->连接中把被动模式勾掉，不然就会一直报`Server sent passive reply with unroutable address 172.18.202.164, using host address instead.`这个错误
 >
-> issue11 elementui表单验证，如果规则是自定义的时候，不会出现红色星号，解决办法是在必填项的`el-item`标签上添加 **`required`**属性即可
+> issue11 elementui表单验证，如果规则是自定义的时候，不会出现红色星号，解决办法是在必填项的`el-form-item`标签上添加 `required`属性即可
 
