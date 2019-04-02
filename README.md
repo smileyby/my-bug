@@ -76,4 +76,6 @@
     color:red;
   }
 ```
+> 【issue14】elementui在弹窗中加入表单元素，然后添加表单验证，在关闭回调`close`中清除验证结果，这里要注意，清除验证结果要在`nextTick`回调中进行，确保清除的时候表单DOM已经渲染完成，否则会报表单DOM`undefined`
+
 
