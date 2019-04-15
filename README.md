@@ -77,5 +77,7 @@
   }
 ```
 > 【issue14】elementui在弹窗中加入表单元素，然后添加表单验证，在关闭回调`close`中清除验证结果，这里要注意，清除验证结果要在`nextTick`回调中进行，确保清除的时候表单DOM已经渲染完成，否则会报表单DOM`undefined`
+>
+> 【issue15】`vue项目警告There are multiple modules with names that only differ in casing` 问题在于大小写没有区分，在linux下是严格区分大小写，而windows不区分，仔细检查引入文件的路径上的大小写问题
 
 
