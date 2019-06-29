@@ -81,4 +81,6 @@
 > 【issue15】`vue项目警告There are multiple modules with names that only differ in casing` 问题在于大小写没有区分，在linux下是严格区分大小写，而windows不区分，仔细检查引入文件的路径上的大小写问题
 >
 > 【issue16】 elementui中，如果想要在表单弹窗**关闭**或者**切换**时，清空验证信息，一定要注意表单不要用**v-if**来判断显示和隐藏，使用v-if来判断会导致表单的ref重新赋值，导致清除验证无效
+>
+> 【issue17】 elementui中日期选择组件 `el-date-picker` 点击 `×` 清空所选时间，会将model绑定的值设置为null
 
