@@ -1,12 +1,15 @@
 
 # GitHub Issues Blog :tada::tada::tada:
     
-> :alarm_clock: 上次更新: 2020-06-22 00:06:14
+> :alarm_clock: 上次更新: 2020-06-23 00:06:32
     
-共 [28](https://github.com/smileyby/ghiblog/labels) 个标签, [128](https://github.com/smileyby/ghiblog/issues) 篇博文.
+共 [28](https://github.com/smileyby/ghiblog/labels) 个标签, [129](https://github.com/smileyby/ghiblog/issues) 篇博文.
 
 ## 置顶 :thumbsup: 
 ## 最新 :new: 
+- [妈耶，issue好像自动更新了](https://github.com/smileyby/notes/issues/133) <sup>0 :speech_balloon:</sup>  			 :alarm_clock:<sub>2020-06-22 06:33:53</sub> 
+ :label: 	<sub>|</sub><sub>[摸鱼快乐:fish:](https://github.com/smileyby/ghiblog/labels/%E6%91%B8%E9%B1%BC%E5%BF%AB%E4%B9%90%3Afish%3A)	|	</sub>
+
 - [CSS主题快捷切换](https://github.com/smileyby/notes/issues/132) <sup>0 :speech_balloon:</sup>  			 :alarm_clock:<sub>2020-06-12 11:05:19</sub> 
  :label: 	<sub>|</sub><sub>[:monkey_face: CSS相关](https://github.com/smileyby/ghiblog/labels/%3Amonkey_face%3A%20CSS%E7%9B%B8%E5%85%B3)	|	</sub><sub>[:umbrella:CSS积累](https://github.com/smileyby/ghiblog/labels/%3Aumbrella%3ACSS%E7%A7%AF%E7%B4%AF)	|	</sub>
 
@@ -18,9 +21,6 @@
 
 - [测试题](https://github.com/smileyby/notes/issues/129) <sup>1 :speech_balloon:</sup>  			 :alarm_clock:<sub>2020-06-10 07:54:55</sub> 
  :label: 	<sub>|</sub>
-
-- [我要摆地摊 =>转载自微信公众号：漫话编程](https://github.com/smileyby/notes/issues/128) <sup>0 :speech_balloon:</sup>  			 :alarm_clock:<sub>2020-06-09 09:05:08</sub> 
- :label: 	<sub>|</sub><sub>[摸鱼快乐:fish:](https://github.com/smileyby/ghiblog/labels/%E6%91%B8%E9%B1%BC%E5%BF%AB%E4%B9%90%3Afish%3A)	|	</sub>
 
 ## 分类  :card_file_box: 
 
@@ -315,7 +315,8 @@
 </details>
 
 <details>
-<summary>摸鱼快乐:fish:	<sup>3:newspaper:</sup></summary>
+<summary>摸鱼快乐:fish:	<sup>4:newspaper:</sup></summary>
+- [妈耶，issue好像自动更新了](https://github.com/smileyby/notes/issues/133)  <sup>0 :speech_balloon:</sup>  	 :alarm_clock:<sub>2020-06-22 06:33:53</sub> 
 - [我要摆地摊 =>转载自微信公众号：漫话编程](https://github.com/smileyby/notes/issues/128)  <sup>0 :speech_balloon:</sup>  	 :alarm_clock:<sub>2020-06-09 09:05:08</sub> 
 - [神兽专区](https://github.com/smileyby/notes/issues/119)  <sup>8 :speech_balloon:</sup>  	 :alarm_clock:<sub>2020-05-20 07:01:51</sub> 
 - [这是一个专门用来摸鱼的ISSUE](https://github.com/smileyby/notes/issues/76)  <sup>2 :speech_balloon:</sup>  	 :alarm_clock:<sub>2019-12-20 09:49:19</sub> 
