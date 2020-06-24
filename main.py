@@ -64,17 +64,12 @@ def bundle_summary_section():
     summary_section = '''
 <p align='center'>
     <img src="https://badgen.net/badge/labels/{1}"/>
-    <img src="https://badgen.net/github/issues/{0}/ghiblog"/>
+    <img src="https://badgen.net/github/issues/{0}/notes"/>
     <img src="https://badgen.net/badge/last-commit/{2}"/>
-    <img src="https://badgen.net/github/forks/{0}/ghiblog"/>
-    <img src="https://badgen.net/github/stars/{0}/ghiblog"/>
-    <img src="https://badgen.net/github/watchers/{0}/ghiblog"/>
-    <img src="https://badgen.net/github/release/{0}/ghiblog"/>
-</p>
-<p align='center'>
-    <a href="https://github.com/jwenjian/visitor-count-badge">
-        <img src="https://visitor-badge.glitch.me/badge?page_id=jwenjian.ghiblog"/>
-    </a>
+    <img src="https://badgen.net/github/forks/{0}/notes"/>
+    <img src="https://badgen.net/github/stars/{0}/notes"/>
+    <img src="https://badgen.net/github/watchers/{0}/notes"/>
+    <img src="https://badgen.net/github/release/{0}/notes"/>
 </p>
 '''.format(username, total_label_count, cur_time)
 
