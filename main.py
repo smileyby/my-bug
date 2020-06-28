@@ -62,15 +62,23 @@ def bundle_summary_section():
     pic_of_the_day = NasaClient().get_picture_of_the_day()
 
     summary_section = '''
+
 <p align='center'>
     <img src="https://badgen.net/badge/labels/{1}"/>
-    <img src="https://badgen.net/github/issues/{0}/notes"/>
+    <img src="https://badgen.net/github/issues/{0}/ghiblog"/>
     <img src="https://badgen.net/badge/last-commit/{2}"/>
-    <img src="https://badgen.net/github/forks/{0}/notes"/>
-    <img src="https://badgen.net/github/stars/{0}/notes"/>
-    <img src="https://badgen.net/github/watchers/{0}/notes"/>
-    <img src="https://badgen.net/github/release/{0}/notes"/>
+    <img src="https://badgen.net/github/forks/{0}/ghiblog"/>
+    <img src="https://badgen.net/github/stars/{0}/ghiblog"/>
+    <img src="https://badgen.net/github/watchers/{0}/ghiblog"/>
+    <img src="https://badgen.net/github/release/{0}/ghiblog"/>
 </p>
+
+<p align='center'>
+    <a href="https://github.com/jwenjian/visitor-count-badge">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=jwenjian.ghiblog"/>
+    </a>
+</p>
+
 '''.format(username, total_label_count, cur_time)
 
     return summary_section
@@ -107,10 +115,15 @@ def format_issue_with_labels(issue: Issue):
 
     return '''
 #### [{0}]({1}) {2} \t {3}
+
 :label: : {4}
+
 {5}
+
 [更多>>>]({1})
+
 ---
+
 '''.format(issue.title, issue.html_url, sup('%s :speech_balloon:' % issue.comments), issue.created_at, labels_str[:-2],
            body_summary)
 
@@ -137,11 +150,13 @@ def bundle_list_by_labels_section():
 
     list_by_labels_section = """
 ## 分类  :card_file_box: 
+
 <details open="open">
     <summary>
         <img src="%s" title="词云, 点击展开详细分类" alt="词云， 点击展开详细分类">
         <p align="center">:cloud: 词云 :cloud: <sub>点击词云展开详细分类:point_down: </sub></p>
     </summary>
+
 """ % (wordcloud_image_url,)
 
     all_labels = ghiblog.get_labels()
@@ -159,11 +174,14 @@ def bundle_list_by_labels_section():
         list_by_labels_section += '''
 <details>
 <summary>%s\t<sup>%s:newspaper:</sup></summary>
+
 %s
+
 </details>
 ''' % (label.name, count, temp)
 
     list_by_labels_section += """
+
 </details>    
 """
     return list_by_labels_section
@@ -193,6 +211,7 @@ def bundle_cover_image_section() -> str:
     img_url = img_md[(img_md.index('(') + 1):img_md.index(')')]
     print(img_url)
     return '''
+
 <p align='center'>
 <a href='{0}'>
 <img src='{1}' width='50%' alt='{2}'>
@@ -201,6 +220,7 @@ def bundle_cover_image_section() -> str:
 <p align='center'>
 <span>{2}</span>
 </p>
+
     '''.format(c.html_url, img_url, img_desc)
 
 
@@ -221,7 +241,9 @@ def bundle_projects_section() -> str:
             content += '\n| --- | --- | --- |'
     return '''
 # 开源项目
+
 {}
+
 '''.format(content)
 
 

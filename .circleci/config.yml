@@ -1,34 +1,39 @@
-version: 2.0
+name: CI
+
+on: [issues, issue_comment]
 
 jobs:
   build:
-    docker:
-      - image: circleci/python:latest
-    working_directory: ~/circleci-demo-workflows
+
+    runs-on: ubuntu-latest
+    
     steps:
-      - checkout
-      # Run python script
-      - run: pip install PyGithub --user
-      - run: python3 main.py
-      - run: git version
-      - run: git status
-      - run: git config --global user.email "smileyby@126.com"
-      - run: git config --global user.name "smileyby"
-      - run: git checkout master
-      - run: git add .
-      - run: git commit -m "Update From Circle CI"
-      - run: git push https://$GITHUB_LOGIN:$GITHUB_PASSWORD@github.com/$GITHUB_LOGIN/ghiblog.git
-      - run: echo 'done'
-
-workflows:
-  version: 2
-  scheduled-workflow:
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only: master
-
-    jobs:
-      - build
+    - uses: actions/checkout@master
+    - name: install dependencies
+      run: |
+        pip3 install setuptools --user
+        pip3 install PyGithub --user
+        pip3 install wordcloud --user
+        pip3 install matplotlib --user
+    - name: run python script
+      env:
+        GITHUB_LOGIN: smileyby
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python3 main.py
+    - name: config git info
+      run: |
+        git config --global user.email "smileyby@126.com"
+        git config --global user.name "smileyby"
+    - name: commit change
+      run: |
+        git checkout master
+        git add .
+        git commit -m "Update from Github Action"
+    - name: push change
+      env:
+        GITHUB_LOGIN: smileyby
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push https://$GITHUB_LOGIN:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+    - name: done
+      run: echo 'done'
