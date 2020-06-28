@@ -13,7 +13,7 @@ from word_cloud import WordCloudGenerator
 
 user: Github
 username: str
-ghiblog: Repository
+smileyby: Repository
 cur_time: str
 
 
@@ -45,19 +45,19 @@ def login():
     user = Github(username, password)
 
 
-def get_ghiblog():
-    global ghiblog
-    ghiblog = user.get_repo(os.environ.get('GITHUB_REPOSITORY'))
+def get_smileyby():
+    global smileyby
+    smileyby = user.get_repo(os.environ.get('GITHUB_REPOSITORY'))
 
 
 def bundle_summary_section():
-    global ghiblog
+    global smileyby
     global cur_time
     global user
     global username
 
-    total_label_count = ghiblog.get_labels().totalCount
-    total_issue_count = ghiblog.get_issues().totalCount
+    total_label_count = smileyby.get_labels().totalCount
+    total_issue_count = smileyby.get_issues().totalCount
 
     pic_of_the_day = NasaClient().get_picture_of_the_day()
 
@@ -65,17 +65,17 @@ def bundle_summary_section():
 
 <p align='center'>
     <img src="https://badgen.net/badge/labels/{1}"/>
-    <img src="https://badgen.net/github/issues/{0}/ghiblog"/>
+    <img src="https://badgen.net/github/issues/{0}/smileyby"/>
     <img src="https://badgen.net/badge/last-commit/{2}"/>
-    <img src="https://badgen.net/github/forks/{0}/ghiblog"/>
-    <img src="https://badgen.net/github/stars/{0}/ghiblog"/>
-    <img src="https://badgen.net/github/watchers/{0}/ghiblog"/>
-    <img src="https://badgen.net/github/release/{0}/ghiblog"/>
+    <img src="https://badgen.net/github/forks/{0}/smileyby"/>
+    <img src="https://badgen.net/github/stars/{0}/smileyby"/>
+    <img src="https://badgen.net/github/watchers/{0}/smileyby"/>
+    <img src="https://badgen.net/github/release/{0}/smileyby"/>
 </p>
 
 <p align='center'>
-    <a href="https://github.com/jwenjian/visitor-count-badge">
-        <img src="https://visitor-badge.glitch.me/badge?page_id=jwenjian.ghiblog"/>
+    <a href="https://github.com/smileyby/visitor-count-badge">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=smileyby.notes"/>
     </a>
 </p>
 
@@ -85,10 +85,10 @@ def bundle_summary_section():
 
 
 def bundle_pinned_issues_section():
-    global ghiblog
+    global smileyby
 
-    pinned_label = ghiblog.get_label(':+1:置顶')
-    pinned_issues = ghiblog.get_issues(labels=(pinned_label,))
+    pinned_label = smileyby.get_label(':+1:置顶')
+    pinned_issues = smileyby.get_issues(labels=(pinned_label,))
 
     pinned_issues_section = '\n## 置顶 :thumbsup: \n'
 
@@ -105,7 +105,7 @@ def format_issue_with_labels(issue: Issue):
     labels_str = ''
 
     for label in labels:
-        labels_str += '[%s](https://github.com/%s/ghiblog/labels/%s), ' % (
+        labels_str += '[%s](https://github.com/%s/smileyby/labels/%s), ' % (
             label.name, username, urllib.parse.quote(label.name))
 
     if '---' in issue.body:
@@ -129,9 +129,9 @@ def format_issue_with_labels(issue: Issue):
 
 
 def bundle_new_created_section():
-    global ghiblog
+    global smileyby
 
-    new_5_created_issues = ghiblog.get_issues()[:5]
+    new_5_created_issues = smileyby.get_issues()[:5]
 
     new_created_section = '## 最新 :new: \n'
 
@@ -142,11 +142,11 @@ def bundle_new_created_section():
 
 
 def bundle_list_by_labels_section():
-    global ghiblog
+    global smileyby
     global user
 
     # word cloud
-    wordcloud_image_url = WordCloudGenerator(ghiblog).generate()
+    wordcloud_image_url = WordCloudGenerator(smileyby).generate()
 
     list_by_labels_section = """
 ## 分类  :card_file_box: 
@@ -159,14 +159,14 @@ def bundle_list_by_labels_section():
 
 """ % (wordcloud_image_url,)
 
-    all_labels = ghiblog.get_labels()
+    all_labels = smileyby.get_labels()
 
     for label in all_labels:
         temp = ''
         # 这里的count是用来计算该label下有多少issue的, 按理说应该是取issues_in_label的totalCount, 但是不知道为什么取出来的一直都是
         # 所有的issue数量, 之后再优化.
         count = 0
-        issues_in_label = ghiblog.get_issues(labels=(label,))
+        issues_in_label = smileyby.get_issues(labels=(label,))
         for issue in issues_in_label:
             temp += format_issue(issue)
             count += 1
@@ -188,11 +188,11 @@ def bundle_list_by_labels_section():
 
 
 def bundle_cover_image_section() -> str:
-    global ghiblog
-    cover_label = ghiblog.get_label(':framed_picture:封面')
+    global smileyby
+    cover_label = smileyby.get_label(':framed_picture:封面')
     if cover_label is None:
         return ''
-    cover_issues = ghiblog.get_issues(labels=(cover_label,))
+    cover_issues = smileyby.get_issues(labels=(cover_label,))
     if cover_issues is None or cover_issues.totalCount == 0:
         return ''
     comments = cover_issues[0].get_comments()
@@ -225,11 +225,11 @@ def bundle_cover_image_section() -> str:
 
 
 def bundle_projects_section() -> str:
-    global ghiblog, username
-    project_label = ghiblog.get_label('开源')
+    global smileyby, username
+    project_label = smileyby.get_label('开源')
     if not project_label:
         return ''
-    issues = ghiblog.get_issues(labels=(project_label,))
+    issues = smileyby.get_issues(labels=(project_label,))
     if not issues or issues.totalCount == 0:
         return ''
     content = ''
@@ -255,8 +255,8 @@ def execute():
     # 1. login
     login()
 
-    # 2. get ghiblog
-    get_ghiblog()
+    # 2. get smileyby
+    get_smileyby()
 
     # 3. summary section
     summary_section = bundle_summary_section()
