@@ -1,4 +1,4 @@
-
+# 迁移至：https://github.com/smileyby/notes-copy 本项目不再更新
 # GitHub Issues Blog :tada::tada::tada:
     
 > :alarm_clock: 上次更新: 2020-06-24 00:06:40
